@@ -119,6 +119,17 @@ python app.py
 
 Open your browser at <http://localhost:7860>
 
+## Deploying to Render
+
+This repository includes a Render Blueprint at `render.yaml`. To deploy:
+
+1. Push the repository to GitHub.
+2. In Render, choose **New → Blueprint** and connect this repository. Render will use `render.yaml` and the `BanglaAgent` folder as the service root.
+3. During setup, provide `OPENAI_API_KEY` as a secret environment variable. You can also add it later under the service's **Environment** settings. Do not commit your `.env` file or API key.
+4. Deploy the service and open the `onrender.com` URL shown in the Render dashboard.
+
+The app listens on Render's assigned `PORT` (and defaults to port 7860 for local use). Files stored on a Render web service's local filesystem are not durable across restarts or deployments. Uploaded PDFs are therefore intended for the current running session; use external persistent storage if PDFs must survive restarts or be shared across instances. Free services may also spin down when idle, so the first request after inactivity can take longer.
+
 ## Usage
 
 ### Asking Questions
