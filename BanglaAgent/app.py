@@ -152,6 +152,12 @@ CUSTOM_CSS = """
     font-size: 1.15em !important;
     margin-top: 16px !important;
 }
+.answer-panel p,
+.answer-panel li,
+.answer-panel strong,
+.answer-panel em {
+    color: #e2e8f0 !important;
+}
 .answer-panel ul, .answer-panel ol {
     padding-left: 20px;
 }
